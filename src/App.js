@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import UserSelector from './components/UserSelector';
+import CreatePost from './components/CreatePost';
+import PostDetails from './components/PostDetails';
+import Comments from './components/Comments';
 
 function App() {
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [createdPost, setCreatedPost] = useState(null);
+  const [comments, setComments] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="p-6 max-w-4xl mx-auto">
+      <h1 className="text-2xl font-bold mb-4">API Chaining Dashboard</h1>
+      
+      <UserSelector setSelectedUser={setSelectedUser} />
+
+      {selectedUser && (
+        <CreatePost selectedUser={selectedUser} setCreatedPost={setCreatedPost} />
+      )}
+
+      {createdPost && (
+        <PostDetails createdPost={createdPost} />
+      )}
+
+      {createdPost && (
+        <Comments postId={createdPost.id} comments={comments} setComments={setComments} />
+      )}
     </div>
   );
 }
