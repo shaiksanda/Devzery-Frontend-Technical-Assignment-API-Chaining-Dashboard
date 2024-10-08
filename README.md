@@ -4,12 +4,6 @@ This project is a responsive web application built with React.js and Tailwind CS
 
 ## Setup Instructions
 
-1. **Clone the repository:**
-   ```bash
-git clone <repository-url>
-
-cd <project-directory>
-
 npm install
 
 npm start
@@ -52,4 +46,4 @@ Please let me know if you have any questions or need further information.
 Thank you!
 
 Best regards,  
-Shubham P Patil
+Shaik sandani Basha.

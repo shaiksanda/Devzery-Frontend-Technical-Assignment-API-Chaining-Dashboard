@@ -23,16 +23,23 @@ const UserSelector = ({ setSelectedUser }) => {
 
   return (
     <div className="mb-6">
-      <h2 className="text-xl font-semibold mb-2">1. Select a User</h2>
-      {loading && <p>Loading users...</p>}
+      <h2 className="font-semibold mb-2 text-green-500" >1. Select a User</h2>
+      {loading && <p className='text-center m-2 font-bold'>Loading users...</p>}
       {error && <p className="text-red-500">{error}</p>}
       <select
         onChange={(e) => setSelectedUser(users.find(user => user.id === parseInt(e.target.value)))}
-        className="border p-2 rounded"
+        className="text-white font-bold border p-2 rounded cursor-pointer focus:outline-none"
+        style={{ background: "linear-gradient(to right, skyblue, dodgerblue)" }}
+        onMouseOver={(e) =>
+          (e.target.style.background = "linear-gradient(to right, dodgerblue, skyblue)")
+        }
+        onMouseOut={(e) =>
+          (e.target.style.background = "linear-gradient(to right, skyblue, dodgerblue)")
+        }
       >
-        <option value="">Select User</option>
+        <option className='text-black font-bold' value="">Select User</option>
         {users.map((user) => (
-          <option key={user.id} value={user.id}>
+          <option className='text-black font-bold'  key={user.id} value={user.id}>
             {user.name}
           </option>
         ))}

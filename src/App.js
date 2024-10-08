@@ -10,8 +10,8 @@ function App() {
   const [comments, setComments] = useState([]);
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">API Chaining Dashboard</h1>
+    <div className="p-6 max-w-4xl mx-auto text-center">
+      <h1 className="text-2xl font-bold m-4">API Chaining Dashboard</h1>
       
       <UserSelector setSelectedUser={setSelectedUser} />
 

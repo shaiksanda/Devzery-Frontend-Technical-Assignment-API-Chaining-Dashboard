@@ -20,7 +20,7 @@ const Comments = ({ postId, comments, setComments }) => {
 
   return (
     <div className="mb-6">
-      <h2 className="text-xl font-semibold mb-2">4. Fetch Comments</h2>
+      <h2 className="text-green-500 font-semibold mb-2">4. Fetch Comments</h2>
       <button onClick={fetchComments} className="bg-green-500 text-white p-2 rounded">
         {loading ? 'Fetching Comments...' : 'Get Comments for Post'}
       </button>
